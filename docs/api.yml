@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Library API
   version: 1.0.0
-  description: PROG3 - TD1 - STD22089 - RAZAFINDRAKOTO Andy Avotiana
+  description: PROG3-TD1-STD22089-RAZAFINDRAKOTO Andy Avotiana
 servers:
   - url: https://library.com
 paths:
