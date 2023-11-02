@@ -68,7 +68,7 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Author'
-                  
+
     put:
       summary: Create or update a list of authors
       operationId: crupdateAuthors
@@ -88,6 +88,20 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Author'
+
+    delete:
+      summary: Delete an author
+      description: delete a student
+      parameters:
+        - in: query
+          name: author
+          description: name of the author that need to be deleted
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
   #TODO2: complete GET (can be filtered by name) - PUT - DELETE
 components:
   schemas:
