@@ -19,11 +19,23 @@ paths:
           schema:
             type: string
         - in: query
-          name: bookRelease
-          description: Filter return books by intervals of dates of the releaseDate
+          name: bookReleaseMin
+          description: |
+            If  `releaseDateMax` is not provided, `releaseDateMin` is ignored.
+            `releaseDateMin` can not be after `releaseDateMax`.
           required: false
           schema:
             type: string
+            format: date
+        - in: query
+          name: bookReleaseMax
+          description: |
+            If  `releaseDateMin` is not provided, `releaseDateMax` is ignored.
+            `releaseDateMax` can not be before `releaseDateMax`.
+          required: false
+          schema:
+            type: string
+            format: date        
       responses:
         200:
           description: The list of filtered books
