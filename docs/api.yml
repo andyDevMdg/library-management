@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Library API
-  version: 1.0.0
+  version: 1.1.0
   description: PROG3-TD1-STD22089-RAZAFINDRAKOTO Andy Avotiana
 servers:
   - url: https://library.com
@@ -35,7 +35,7 @@ paths:
           required: false
           schema:
             type: string
-            format: date        
+            format: date
       responses:
         200:
           description: The list of filtered books
@@ -106,7 +106,6 @@ paths:
                 items:
                   $ref: "#/components/schemas/Author"
 
-
     delete:
       summary: Delete all authors
       operationId: deleteAllAuhtors
@@ -138,7 +137,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Author'
+                $ref: "#/components/schemas/Author"
 components:
   schemas:
     Book:
@@ -149,7 +148,7 @@ components:
         bookName:
           type: string
         author:
-          $ref: '#/components/schemas/Author'
+          $ref: "#/components/schemas/Author"
         pageNumbers:
           type: integer
         topic:
@@ -170,8 +169,8 @@ components:
         name:
           type: string
         sex:
-          $ref: '#/components/schemas/Sex'
-        
+          $ref: "#/components/schemas/Sex"
+
     Sex:
       type: string
       format: char
