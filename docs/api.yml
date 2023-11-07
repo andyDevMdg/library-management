@@ -106,10 +106,24 @@ paths:
                 items:
                   $ref: "#/components/schemas/Author"
 
+
+    delete:
+      summary: Delete all authors
+      operationId: deleteAllAuhtors
+      parameters:
+        - in: query
+          name: allAuthors
+          description: describe all authors to be deleted
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: All authors deleted successfully
+
   /authors/{authorId}:
     delete:
       summary: Delete an author
-      description: delete a student
       operationId: deleteAuthor
       parameters:
         - in: path
