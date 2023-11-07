@@ -177,3 +177,14 @@ components:
       enum:
         - M
         - F
+
+    CrupdateBook:
+      allOf:
+        - $ref: '#/components/schemas/Book'
+        - type: object
+        - required:
+          - id 
+          - bookName
+          - pageNumbers
+          - topic
+          - releaseDate
