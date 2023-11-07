@@ -5,9 +5,12 @@ info:
   description: PROG3-TD1-STD22089-RAZAFINDRAKOTO Andy Avotiana
 servers:
   - url: https://library.com
+
 paths:
   /books:
     get:
+      tags:
+        - Books
       summary: Get all books
       description: The returned books are ordered by updated datetime.
       operationId: getBooks
@@ -46,6 +49,8 @@ paths:
                 items:
                   $ref: "#/components/schemas/Book"
     put:
+      tags:
+        - Books
       summary: Create or update a list of books
       operationId: crupdateBooks
       requestBody:
@@ -66,6 +71,8 @@ paths:
                   $ref: "#/components/schemas/Book"
   /authors:
     get:
+      tags:
+        - Authors
       summary: Get all authors
       description: The returned authors are filtered by naùe
       operationId: getAuthors
@@ -87,6 +94,8 @@ paths:
                   $ref: "#/components/schemas/Author"
 
     put:
+      tags:
+        - Authors
       summary: Create or update a list of authors
       operationId: crupdateAuthors
       requestBody:
@@ -107,6 +116,8 @@ paths:
                   $ref: "#/components/schemas/Author"
 
     delete:
+      tags:
+        - Authors
       summary: Delete all authors
       operationId: deleteAllAuhtors
       parameters:
@@ -122,6 +133,8 @@ paths:
 
   /authors/{authorId}:
     delete:
+      tags:
+        - Authors
       summary: Delete an author
       operationId: deleteAuthor
       parameters:
