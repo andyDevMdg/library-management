@@ -135,7 +135,7 @@ components:
         bookName:
           type: string
         author:
-          type: string
+          $ref: '#/components/schemas/Author'
         pageNumbers:
           type: integer
         topic:
@@ -156,8 +156,11 @@ components:
         name:
           type: string
         sex:
-          type: string
-          format: char
-          enum:
-            - M
-            - F
+          $ref: '#/components/schemas/Sex'
+        
+    Sex:
+      type: string
+      format: char
+      enum:
+        - M
+        - F
