@@ -48,6 +48,8 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Book"
+
+      
     put:
       tags:
         - Books
@@ -156,7 +158,6 @@ paths:
   /books/{bookId}/authors/{authorId}:
     put:
       tags:
-        - Books
         - Authors
       summary: update the author of a book by its id
       operationId: updateAuthor
@@ -180,8 +181,7 @@ paths:
   /books/authors:
     put:
       tags:
-        - Books
-        - authors
+        - Authors
       summary: update book author
       operationId: updateBookAuthor
       requestBody:
@@ -197,6 +197,35 @@ paths:
 
 #b.i. Car il suffit de ces propriétés pour identifier les objets à modifier et effectuer l'opération
 #b.ii. Dans le cas d'un GET
+
+  /authors/page/{page}/pageSize/{pageSize}:
+    get:
+      tags:
+        - Authors
+      summary: page and pageSize
+      operationId: pagination
+      parameters:
+        - in: path
+          name: page
+          schema:
+            type: integer
+          description: Set value to 1 by default if null is provided
+          required: true
+        - in: path
+          name: pageSize
+          schema:
+            type: integer
+          description: Set value to 50 by default if null is provided
+          required: true
+      responses:
+        "200":
+          description: list of authors
+          content:
+            application/json:
+              schema:
+                type: object
+                items:
+                  $ref: "#/components/schemas/Author"
 
 
 components:
