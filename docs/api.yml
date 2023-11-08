@@ -280,3 +280,20 @@ components:
           type: string
         authorId:
           type: string
+
+  parameters:
+    queryPagination:
+      in: query
+      name: queryPagination
+      description: paratemerts of the pagination in query
+      required: false
+      schema: 
+        type: object
+        properties:
+          page: 
+            type: integer
+            description: Set value to 1 by default if null is provided
+          pageSize:
+            type: integer
+            description: Set value to 50 by default if null is provided
+          
