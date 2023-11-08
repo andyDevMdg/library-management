@@ -62,7 +62,7 @@ paths:
                 $ref: "#/components/schemas/Book"
       responses:
         200:
-          description: The list of created or updated books
+          description: The list of books created or updated successfully
           content:
             application/json:
               schema:
@@ -107,7 +107,7 @@ paths:
                 $ref: "#/components/schemas/Author"
       responses:
         200:
-          description: list of created or updated authors
+          description: list of authors created or updated successfully
           content:
             application/json:
               schema:
@@ -157,6 +157,7 @@ paths:
     put:
       tags:
         - Books
+        - Authors
       summary: update the author of a book by its id
       operationId: updateAuthor
       parameters:
@@ -175,6 +176,24 @@ paths:
       responses:
         "200":
           description: Author updated successfully
+
+  /books/authors:
+    put:
+      tags:
+        - Books
+        - authors
+      summary: update book author
+      operationId: updateBookAuthor
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              items:
+                $ref: "#/components/schemas/UpdateBookAuthor"
+      responses:
+        "200":
+          description: book author updated successfully
 
 
 components:
@@ -222,3 +241,10 @@ components:
         - $ref: '#/components/schemas/Book'
         - type: object
   
+    UpdateBookAuthor:
+      type: object
+      properties:
+        bookId:
+          type: string
+        authorId:
+          type: string
