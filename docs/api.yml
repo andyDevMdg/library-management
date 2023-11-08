@@ -296,4 +296,18 @@ components:
           pageSize:
             type: integer
             description: Set value to 50 by default if null is provided
-          
+
+    pathPagination:
+      in: path
+      name: pathPagination
+      description: paratemerts of the pagination as path
+      required: true
+      schema: 
+        type: object
+        properties:
+          page: 
+            type: integer
+            description: Set value to 1 by default if null is provided
+          pageSize:
+            type: integer
+            description: Set value to 50 by default if null is provided
