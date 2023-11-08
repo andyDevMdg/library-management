@@ -151,6 +151,32 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Author"
+
+
+  /books/{bookId}/authors/{authorId}:
+    put:
+      tags:
+        - Books
+      summary: update the author of a book by its id
+      operationId: updateAuthor
+      parameters:
+        - in: path
+          name: bookId
+          description: Id of the book written by the author to be updated
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: authorId
+          description: author Id to be updated
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Author updated successfully
+
+
 components:
   schemas:
     Book:
@@ -161,7 +187,7 @@ components:
         bookName:
           type: string
         author:
-          $ref: "#/components/schemas/Author"
+          $ref: "#/components/schemas/CrupdateBook"
         pageNumbers:
           type: integer
         topic:
@@ -195,9 +221,4 @@ components:
       allOf:
         - $ref: '#/components/schemas/Book'
         - type: object
-        - required:
-          - id 
-          - bookName
-          - pageNumbers
-          - topic
-          - releaseDate
+  
