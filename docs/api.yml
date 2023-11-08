@@ -195,6 +195,9 @@ paths:
         "200":
           description: book author updated successfully
 
+#b.i. Car il suffit de ces propriétés pour identifier les objets à modifier et effectuer l'opération
+#b.ii. Dans le cas d'un GET
+
 
 components:
   schemas:
