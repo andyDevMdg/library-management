@@ -294,6 +294,14 @@ components:
         authorId:
           type: string
 
+    Exception:
+      type: object
+      properties:
+        type:
+          type: string
+        message: 
+          type: string
+
   parameters:
     queryPagination:
       in: query
@@ -324,3 +332,23 @@ components:
           pageSize:
             type: integer
             description: Set value to 50 by default if null is provided
+
+  responses:
+    '400':
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Exception'
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Exception'
+    '500':
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Exception'
