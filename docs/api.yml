@@ -39,6 +39,19 @@ paths:
           schema:
             type: string
             format: date
+        - in: query
+          name: page
+          description: Set value to 1 by default if null is provided
+          required: false
+          schema: 
+            type: integer
+        - in: query
+          name: pageSize
+          description: Set value to 50 by default if null is provided
+          required: false
+          schema:
+            type: integer
+            
       responses:
         200:
           description: The list of filtered books
