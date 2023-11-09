@@ -294,7 +294,7 @@ components:
         authorId:
           type: string
 
-    Exception:
+    Body:
       type: object
       properties:
         type:
@@ -339,16 +339,16 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Exception'
+            $ref: '#/components/schemas/Body'
     '403':
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Exception'
+            $ref: '#/components/schemas/Body'
     '500':
       description: Internal server error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Exception'
+            $ref: '#/components/schemas/Body'
